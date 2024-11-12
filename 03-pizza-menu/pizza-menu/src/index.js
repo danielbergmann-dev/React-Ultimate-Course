@@ -93,7 +93,7 @@ function Pizza(props) {
       <div>
         <h3>{props.name}</h3>
         <p>{props.ingredients}</p>
-        <p>${props.price +3}</p>
+        <p>{props.price + 2}</p>
       </div>
     </div>
   );
@@ -110,7 +110,6 @@ function Footer() {
     <div className="footer">
       <p>{new Date().toLocaleTimeString()} We're currently open</p>
     </div>
-    
   );
 }
 
