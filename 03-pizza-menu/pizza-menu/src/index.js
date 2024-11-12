@@ -110,6 +110,7 @@ function Footer() {
     <div className="footer">
       <p>{new Date().toLocaleTimeString()} We're currently open</p>
     </div>
+    
   );
 }
 
