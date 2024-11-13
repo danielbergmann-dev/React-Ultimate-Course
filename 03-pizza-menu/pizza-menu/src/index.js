@@ -122,6 +122,8 @@ function Footer() {
       </div>
     )}
     </div>
+    
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
