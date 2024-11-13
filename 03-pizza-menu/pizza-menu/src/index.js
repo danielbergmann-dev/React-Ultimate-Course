@@ -112,17 +112,17 @@ function Footer() {
   const isOpen = hour >= openHour && hour <= closeHour;
   console.log(isOpen);
 
-  return <div className="footer">
-    {isOpen && (
-      <div className="order">
-    <p>
-      We are open from {openHour}:00 AM until {closeHour}:00 PM. Order now!
-      </p>
-      <button className="btn">Order</button>
-      </div>
-    )}
+  return (
+    <div className="footer">
+      {isOpen && (
+        <div className="order">
+          <p>
+            We are open from {openHour}:00 AM until {closeHour}:00 PM. Order now!
+          </p>
+          <button className="btn">Order</button>
+        </div>
+      )}
     </div>
-    
   );
 }
 
