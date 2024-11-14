@@ -75,11 +75,17 @@ function Menu() {
       <h2>Our Menu</h2>
 
       {numPizzas > 0 ? (
-        <ul className="pizzas">
-          {pizzas.map((pizza) => (
-            <Pizza pizzaObj={pizza} key={pizza.name} />
-          ))}
-        </ul>
+        <>
+          <p>
+            Authentic Italian Pizza with a creative twist! Choose your toppings
+            and customize it just the way you like.
+          </p>
+          <ul className="pizzas">
+            {pizzas.map((pizza) => (
+              <Pizza pizzaObj={pizza} key={pizza.name} />
+            ))}
+          </ul>
+        </>
       ) : (
         <p>We're still working on our menu. Please come back later :-)</p>
       )}
@@ -101,16 +107,16 @@ function Menu() {
   );
 }
 
-function Pizza(props) {
-  if (props.pizzaObj.soldOut) return null;
+function Pizza({ pizzaObj }) {
+  if (pizzaObj.soldOut) return null;
 
   return (
     <li className="pizza">
-      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+      <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
-        <h3>{props.pizzaObj.name}</h3>
-        <p>{props.pizzaObj.ingredients}</p>
-        <p>${props.pizzaObj.price + 3}</p>
+        <h3>{pizzaObj.name}</h3>
+        <p>{pizzaObj.ingredients}</p>
+        <p>${pizzaObj.price + 3}</p>
       </div>
     </li>
   );
@@ -126,19 +132,24 @@ function Footer() {
   return (
     <div className="footer">
       {isOpen ? (
-        <div className="order">
-          <p>
-            We are open from {openHour}:00 AM until {closeHour}:00 PM. Order
-            now!
-          </p>
-          <button className="btn">Order</button>
-        </div>
+        <Order openHour={openHour} closeHour={closeHour} />
       ) : (
         <p>
           We're happy to welcome you between {openHour}:00 AM until {closeHour}
           :00 PM
         </p>
       )}
+    </div>
+  );
+}
+
+function Order({ openHour, closeHour }) {
+  return (
+    <div className="order">
+      <p>
+        We are open from {openHour}:00 AM until {closeHour}:00 PM. Order now!
+      </p>
+      <button className="btn">Order</button>
     </div>
   );
 }
