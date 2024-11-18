@@ -7,6 +7,10 @@ const messages = [
 export default function App() {
   const step = 1;
 
+  function handlePrevious() {
+    alert("Previous button clicked");
+  }
+
   return (
     <div className="steps">
       <div className="numbers">
@@ -19,7 +23,10 @@ export default function App() {
       </p>{" "}
       {/*Wenn step auf 1 gesetzt ist, wird { messages[step - 1] } zu { messages[0] }, was "Learn React ⚛️" entspricht.*/}
       <div className="buttons">
-        <button style={{ backgroundColor: "#7950f2", color: "#fff" }}>
+        <button
+          onClick={handlePrevious}
+          style={{ backgroundColor: "#7950f2", color: "#fff" }}
+        >
           Previous
         </button>
         <button style={{ backgroundColor: "#7950f2", color: "#ffffff" }}>
