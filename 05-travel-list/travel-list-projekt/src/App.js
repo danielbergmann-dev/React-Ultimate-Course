@@ -1,12 +1,13 @@
 export default function App() {
-  <div className="app">
-    <Logo />
-    <Form />
-    <PackingList />
-    <Stats />
-  </div>
+  return (
+    <div className="app">
+      <Logo />
+      <Form />
+      <PackingList />
+      <Stats />
+    </div>
+  );
 }
-
 
 function Logo() {
   return <h1>🌴 Far Away 💼</h1>;
